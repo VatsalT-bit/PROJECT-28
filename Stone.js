@@ -4,13 +4,13 @@ class Stone{
             'restitution':0.3,
             'friction':0,
             'density':1.2,
-            isStatic:false
+            isStatic:true
         }
         this.r=r;
         this.x=x;
         this.y=y;
         this.body = Bodies.circle (this.x, this.y, (this.r-20), options);
-        this.image = loadImage("stone.png");
+        this.image = loadImage("images/stone.png");
         World.add(world, this.body);
       }
       display(){

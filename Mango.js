@@ -1,16 +1,16 @@
 class Mango{
     constructor(x, y,r) {
         var options = {
-            'restitution':0.3,
-            'friction':0,
+            'restitution':0.8,
+            'friction':1.0,
             'density':1.2,
-            isStatic:false
+            'isStatic':true
         }
-        this.r=r;
         this.x=x;
         this.y=y;
-        this.body = Bodies.circle (this.x, this.y, (this.r-20), options);
-        this.image = loadImage("mango.png");
+        this.r=r;
+        this.body = Bodies.circle (this.x, this.y, (this.r-100), options);
+        this.image = loadImage("images/mango.png");
         World.add(world, this.body);
       }
       display(){

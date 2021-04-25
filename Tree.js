@@ -3,11 +3,13 @@ class Tree{
       var options = {
           'restitution':0.8,
           'friction':1.0,
-          'density':1.0
+          'density':1.0,
+          'isStatic':true
       }
       this.body = Bodies.rectangle(x, y, width, height, options);
       this.width = width;
       this.height = height;
+      this.image = loadImage("images/tree.png");
       World.add(world, this.body);
     }
     display(){
@@ -16,8 +18,7 @@ class Tree{
       translate(this.body.position.x, this.body.position.y);
       rotate(angle);
       imageMode(CENTER);
-      fill("black");
-      image(this.image,0, 0,this.height);
+      image(this.image, 0, 0, this.width, this.height);
       pop();
     }
 }
