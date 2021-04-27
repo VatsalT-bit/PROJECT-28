@@ -3,13 +3,13 @@ class Launcher{
         var options = {
             bodyA: bodyA,
             pointB: pointB,
-            stiffness: 0.04,
+            stiffness: 0.01,
             length: 10
         }
 
         this.pointB = pointB
         this.Launcherobject = Constraint.create(options);
-        World.add(world, this.launcherobject);
+        World.add(world, this.Launcherobject);
     }
                                                        
     fly(){
@@ -17,8 +17,7 @@ class Launcher{
     }
 
     display(){
-
-        if(this.launcherobject.bodyA){
+        if(this.Launcherobject.bodyA){
             var pointA = this.Launcherobject.bodyA.position;
             var pointB = this.pointB;
             push()

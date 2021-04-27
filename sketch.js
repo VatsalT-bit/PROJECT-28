@@ -10,7 +10,7 @@ var tree;
 var boy,boyimage;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9;
 var stone;
-var launcherobject;
+var Launcherobject;
 var launchforce=100;
 
 function preload(){
@@ -41,10 +41,7 @@ function setup() {
   boy.addImage(boyimage);
   boy.scale=0.1;
 
-
-  //create launcherObject here
-
-  launcherobject= new Launcher (stone.body,{x:235,y:420});
+  Launcherobject= new Launcher (stone.body,{x:235,y:420});
    
 	Engine.run(engine);
 }
@@ -71,19 +68,23 @@ function draw() {
 
   stone.display();
 
-  launcherobject.display();
+  Launcherobject.display();
 }
 
 function mouseDragged(){
-  Matter.Body.setPosition(launcherobject.body, {x: mouseX , y: mouseY});
+  Matter.Body.setPosition(stone.body, {x: mouseX , y: mouseY});
 
 }
 
 function mouseReleased(){
-  Launcher.fly();
-
+  Launcherobject.fly();
 }
 
-
+function keyPressed(){
+  if(keyCode === 32){
+    Matter.Body.setPosition(stone.body,{x:235,y:420});
+    Launcherobject.attach(stone.body);
+  }
+}
 
   
